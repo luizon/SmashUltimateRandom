@@ -92,7 +92,7 @@ var character = [
 var h1_character;
 var btn;
 var img_thumbnail;
-var root = "small_thumbnails/"
+var root = "https://raw.githubusercontent.com/luizon/SmashUltimateRandom/master/small_thumbnails/"
 var incoming_thumbnail = {
   top: ["-50px", "0px"],
   opacity: [0, 1],
