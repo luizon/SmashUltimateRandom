@@ -103,6 +103,7 @@ var incoming_character_name = {
   opacity: [0, 1],
   easing: 'ease',
 };
+var cont = 0;
 
 var randomize = () => {
     let randomNumber = Math.random()*character.length;
@@ -110,6 +111,13 @@ var randomize = () => {
     h1_character.innerHTML = character[index];
     img_thumbnail.alt = character[index] + " thumbnail.";
     img_thumbnail.src = root + index + ".png";
+    cont++;
+    if(cont == 69) {
+      h1_character.innerHTML = "KOKÚN";
+      img_thumbnail.alt = "kokun";
+      img_thumbnail.src = "https://www.uokpl.rs/fpng/d/161-1615013_goku-dragonball-dragonballz.png";
+      cont = 0;
+    }
     
     animate();
 };
