@@ -1,0 +1,105 @@
+body {
+  background: #112;
+}
+
+* {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+h1 {
+  position: relative;
+  margin: auto;
+  color: #DA0;
+  font-size: 5em;
+  text-align: center;
+  transition-duration: 500ms;
+}
+
+button {
+  margin: auto;
+  border: none;
+  font-size: 5em;
+  text-align: center;
+  background: #202020;
+  color: #999;
+  min-width: 200px;
+  transition-duration: 500ms;
+  animation: buttonAppears;
+  animation-duration: 1000ms;
+}
+
+@keyframes buttonAppears {
+  0%   {
+    opacity: 0;
+  }
+  25%  {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+button:focus {
+  color: #BBB;
+  background: #8E7631;
+}
+
+button:hover {
+  color: #DDD;
+  background: #AE9651;
+}
+
+button:active {
+  color: #EEE;
+  background: #CFB873;
+  transition-duration: 150ms;
+}
+
+img {
+  margin: auto;
+  position: relative;
+  transition-duration: 500ms;
+  width: 30em;
+  height: 30em;
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 4em;
+  }
+  button {
+    font-size: 4em;
+  }
+  img {
+    width: 20em;
+    height: 20em;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  button {
+    font-size: 2em;
+  }
+  img {
+    width: 15em;
+    height: 15em;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.center-horizontally {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
