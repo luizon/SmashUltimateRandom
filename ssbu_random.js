@@ -142,6 +142,8 @@ var randomize = (n) => {
 		cont = 0;
 	}
 	actual_img = root + "thumbnails_600px/" + index + ".png";
+	let load_img = document.createElement("img");
+	load_img.src = actual_img;
 	h1_character.animate(incoming_character_name, 1000);
 	if(img_thumbnail.classList.length > 0) {
 		img_thumbnail.classList.remove("incoming_thumbnail")
