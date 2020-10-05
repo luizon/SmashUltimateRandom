@@ -1,5 +1,14 @@
 body {
-  background: #112;
+  background-color: #112;
+  background-image: linear-gradient(to bottom right, #F00, #F80, #FF0, #0F0, #0FF, #00F, #80F, #F0F, #F00, #F00, #F80);
+  background-size: 1000% 1000%;
+  margin: 0px;
+  animation: gradientAnimation 60s linear infinite;
+}
+
+@keyframes gradientAnimation {
+	0%   {background-position: 0%   0%}
+	100% {background-position: 100% 100%}
 }
 
 * {
@@ -10,19 +19,25 @@ body {
 h1 {
   position: relative;
   margin: auto;
-  color: #DA0;
+  color: #FFF;
+  font-family: PT Sans;
   font-size: 5em;
+  font-weight: 900;
   text-align: center;
   transition-duration: 500ms;
+  -webkit-text-stroke: 4px black;
 }
 
 button {
   margin: auto;
-  border: none;
+  border: 5px black solid;
+  border-radius: 4px;
+  font-family: PT Sans;
   font-size: 5em;
   text-align: center;
-  background: #202020;
-  color: #999;
+  background: #D70;
+  color: #FFF;
+  -webkit-text-stroke: 3px black;
   min-width: 200px;
   transition-duration: 500ms;
   animation: buttonAppears;
@@ -41,20 +56,17 @@ button {
   }
 }
 
-button:focus {
-  color: #BBB;
-  background: #8E7631;
-}
-
-button:hover {
+button:focus, button:hover {
+  border: 6px black solid;
   color: #DDD;
-  background: #AE9651;
+  background: #808;
 }
 
 button:active {
-  color: #EEE;
-  background: #CFB873;
-  transition-duration: 150ms;
+  border: 7px black solid;
+  color: #FFF;
+  background: #F80;
+  transition-duration: 50ms;
 }
 
 img {
@@ -63,31 +75,52 @@ img {
   transition-duration: 500ms;
   width: 30em;
   height: 30em;
+  animation: incoming_thumbnail 1s ease;
 }
 
 @media (max-width: 992px) {
   h1 {
     font-size: 4em;
-  }
-  button {
-    font-size: 4em;
+    -webkit-text-stroke: 2.5px black;
   }
   img {
     width: 20em;
     height: 20em;
+  }
+  button {
+    font-size: 4em;
+    border: 3px black solid;
+    border-radius: 8px;
+    -webkit-text-stroke: 1.5px black;
+  }
+  button:focus, button:hover {
+    border: 5px black solid;
+  }
+  button:active {
+    border: 6px black solid; 
   }
 }
 
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5em;
-  }
-  button {
-    font-size: 2em;
+    -webkit-text-stroke: 1.5px black;
   }
   img {
     width: 15em;
     height: 15em;
+  }
+  button {
+    font-size: 2em;
+    border: 2px black solid;
+    border-radius: 8px;
+    -webkit-text-stroke: 1px black;
+  }
+  button:focus, button:hover {
+    border: 3px black solid;
+  }
+  button:active {
+    border: 4px black solid; 
   }
 }
 
@@ -102,4 +135,42 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('PTSans_Regular.ttf');
+    font-weight: 400;
+}
+
+.incoming_thumbnail {
+	animation: incoming_thumbnail .5s ease;
+	opacity: 1;
+}
+
+@keyframes incoming_thumbnail {
+	from {
+		top: -50px;
+		opacity: 0;
+	}
+	to {
+		top: 0px;
+		opacity: 1;
+	}
+}
+
+.outcoming_thumbnail {
+	animation: outcoming_thumbnail .5s ease;
+	opacity: 0;
+}
+
+@keyframes outcoming_thumbnail {
+	from {
+		left: 0px;
+		opacity: 1;
+	}
+	to {
+		left: 50px;
+		opacity: 0;
+	}
 }
